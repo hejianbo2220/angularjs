@@ -1,0 +1,14 @@
+<div ng-controller="example5Ctrl">
+	Root scope count: <span ng-bind="count"></span>
+	<ul>
+		<li ng-controller="example5Ctrl">
+			<button ng-click="$emit('MyEvent')">向上传播</button>
+			<button ng-click="$broadcast('MyEvent')">向下传播</button>
+			<br>
+			Middle scope count: <span ng-bind="count"></span>
+			<ul>
+				<li ng-controller="example5Ctrl">Last scope count: <span ng-bind="count"></span></li>
+			</ul>
+		</li>
+	</ul>
+</div>
